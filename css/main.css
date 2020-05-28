@@ -65,34 +65,8 @@ select {
 }
 
 .card:hover .card-wrapper {
-  -webkit-animation: spinner 1s forwards;
-          animation: spinner 1s forwards;
-}
-
-@-webkit-keyframes spinner {
-  0% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  100% {
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
-}
-
-@keyframes spinner {
-  0% {
-    -webkit-transform: none;
-            transform: none;
-  }
-  100% {
-    -webkit-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-    -webkit-transform: rotateY(180deg);
-            transform: rotateY(180deg);
-  }
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
 }
 
 .card-wrapper {
@@ -100,6 +74,12 @@ select {
   position: relative;
   width: 100%;
   height: 100%;
+  -webkit-transition: -webkit-transform 0.8s;
+  transition: -webkit-transform 0.8s;
+  transition: transform 0.8s;
+  transition: transform 0.8s, -webkit-transform 0.8s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
 }
 
 .card-front,
@@ -109,6 +89,12 @@ select {
   height: 100%;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+}
+
+.card-front {
+  background-image: url(../images/dribble.jpg);
+  background-position: center;
+  background-size: cover;
 }
 
 .card-front img {

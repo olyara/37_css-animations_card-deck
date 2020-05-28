@@ -58,19 +58,8 @@ select {
 
   &:hover {
     .card-wrapper {
-      animation: spinner 1s forwards;
+      transform: rotateY(180deg);
     }
-  }
-}
-
-@keyframes spinner {
-  0% {
-    transform: none;
-  }
-
-  100% {
-    transform-style: preserve-3d;
-    transform: rotateY(180deg);
   }
 }
 
@@ -79,6 +68,8 @@ select {
   position: relative;
   width: 100%;
   height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
 }
 
 .card-front,
@@ -89,9 +80,15 @@ select {
   backface-visibility: hidden;
 }
 
-.card-front img {
-  width: 150px;
-  height: 200px;
+.card-front {
+  background-image: url(../images/dribble.jpg);
+  background-position: center;
+  background-size: cover;
+
+  img {
+    width: 150px;
+    height: 200px;
+  }
 }
 
 .card-back {
